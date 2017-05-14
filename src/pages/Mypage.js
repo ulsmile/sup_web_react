@@ -3,9 +3,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Avatar from 'material-ui/Avatar';
 import SimpleCheckbox from '../components/Checkbox';
 import SimpleTextField from '../components/Text';
-//import AutoCompleteExampleSimple from '../components/AutoComplete';
-import ListExampleSimple from '../components/List';
+//import AutoCompleteExampleSimple from '../components/AutoComplete';a
+import ListExampleSimple from '../components/List'; 
+import {actions} from '../actions/mypage_actions';
 
+
+import FlatButton from 'material-ui/FlatButton';
 const MypageInfo = () => (
   <MuiThemeProvider>
     <div>
@@ -15,9 +18,14 @@ const MypageInfo = () => (
       <SimpleTextField />
       <SimpleCheckbox />
       <ListExampleSimple />
+			<FlatButton label="Default" onTouchTap={actions.mypageRegister} />
     </div>
   </MuiThemeProvider>
 );
+
+const send = () => {
+	console.log("yeah")
+};
     //<AutoCompleteExampleSimple />
     //<ListExampleSimple />
 

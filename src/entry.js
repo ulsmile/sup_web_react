@@ -17,7 +17,6 @@ ReactDOM.render(
   <Router>
     <div>
       <HeaderInfo />
-      <Route exact path="/" component={MypageInfo}/>
       <Route path="/add" component={AddInfo}/>
       <Route path="/chart" component={ChartInfo}/>
       <Route path="/recording_time" component={RecordingTimeInfo}/>
@@ -26,9 +25,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app')
 );
-  //<div>
-  //  <HeaderInfo />
-  //  <AddInfo />
-  //  <MypageInfo />
-  //</div>,
 
