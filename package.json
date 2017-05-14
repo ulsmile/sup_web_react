@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "css-loader": "^0.28.1",
+    "react-redux": "^5.0.4",
     "react-router": "^4.0.0",
     "react-tap-event-plugin": "^2.0.1"
   }
