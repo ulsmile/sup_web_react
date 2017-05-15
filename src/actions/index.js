@@ -21,8 +21,8 @@ export const toggleTodo = (id) => {
     type: 'TOGGLE_TODO',
     id
   }
-
 }
+
 export const listPlayers = () => {
 	//const url = 'http://localhost:3001/players/'
 	const url = 'https://api.github.com/users'
@@ -44,4 +44,11 @@ export const listPlayers = () => {
 		players 
 	} 
 
+}
+
+export const setMypageCheck = (check) => {
+  return {
+    type: 'SET_MYPAGE_CHECK',
+    check
+  }
 }
