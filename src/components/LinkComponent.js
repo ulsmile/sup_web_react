@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-const Link = ({ active, children, onClick }) => {
-  if (active) {
+const LinkComponent = ({ active, children, onClick }) => {
+  if (active) { //case true
     return <span>{children}</span>
   }
 
@@ -17,10 +17,10 @@ const Link = ({ active, children, onClick }) => {
   )
 }
 
-Link.propTypes = {
+LinkComponent.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
 }
 
-export default Link
+export default LinkComponent

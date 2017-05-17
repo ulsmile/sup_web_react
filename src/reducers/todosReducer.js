@@ -1,4 +1,4 @@
-const todo = (state = {}, action) => {
+const todoReducer = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return {
@@ -12,7 +12,7 @@ const todo = (state = {}, action) => {
       }
 
       return Object.assign({}, state, {
-        completed: !state.completed
+        completed: !state.completed 
       })
 
     default:
@@ -20,20 +20,21 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const todosReducer = (state = [], action) => {
+	
   switch (action.type) {
     case 'ADD_TODO':
       return [
         ...state,
-        todo(undefined, action)
+        todoReducer(undefined, action)
       ]
     case 'TOGGLE_TODO':
       return state.map(t =>
-        todo(t, action)
+        todoReducer(t, action)
       )
     default:
       return state
   }
 }
 
-export default todos
+export default todosReducer
