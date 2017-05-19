@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import combinedReducers from './reducers'
-import AppComponents from './components/AppComponents'
+import AppComponents from './AppComponents'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
