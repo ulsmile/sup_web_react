@@ -1,27 +1,32 @@
 import { connect } from 'react-redux'
 import { setMypageCheck } from '../actions'
-import Mypage from '../components/Mypage'
+import MypageInfo from '../components/Mypage'
 
-const getMypgeCheck = (filter) => {
-  switch (filter) {
-    case 'TRUE':
-      return true
-    case 'FALSE':
+const getMypageCheck = (check,filter) => {
+  switch (check) {
+    case true:
       return false
+    case false:
+      return true
+  }
+}
+//const getMypgeCheck = (check) => {
+//  switch (check) {
+//    case 'TRUE':
+//      return check(t => a)
 //    case 'FALSE':
-//      return check.filter(t => t.completed)
-//    case 'SHOW_ACTIVE':
-//      return todos.filter(t => !t.completed)
+//      return check(t => b)
 
 const mapStateToProps = (state) => {
   return {
-    mypage: getMypgeCheck(state.filter)
+    mypage: getMypageCheck(state.check)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
+    onChange: () => {
+      console.dir("aaa")
       dispatch(setMypageCheck(check))
     }
   }
@@ -30,6 +35,6 @@ const mapDispatchToProps = (dispatch) => {
 const MypageCheck = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Mypage)
+)(MypageInfo)
 
 export default MypageCheck

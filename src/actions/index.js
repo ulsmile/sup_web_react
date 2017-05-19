@@ -47,8 +47,16 @@ export const listPlayers = () => {
 }
 
 export const setMypageCheck = (check) => {
+//  const check = new Boolean();
   return {
     type: 'SET_MYPAGE_CHECK',
     check
+  }
+}
+export const push = () => {
+  const key = []
+  return {
+    type: 'PUSH_BUTTON',
+    key
   }
 }

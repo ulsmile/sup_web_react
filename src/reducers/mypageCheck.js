@@ -1,11 +1,11 @@
-const mypageCheck = (state = 'TRUE', action) => {
+const check = (state = true, action) => {
 	  switch (action.type) {
-	    case 'FALSE':
-		    return action.filter
+	    case 'SET_MYPAGE_CHECK':
+		    return action.check
 	    default:
 	      return state
 	  }
 }
 
-export default mypageCheck
+export default check
 

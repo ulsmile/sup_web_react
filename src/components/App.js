@@ -4,6 +4,8 @@ import Footer from './Footer'
 import ListPlayers from '../containers/ListPlayers'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
+import MypageCheck from '../containers/Mypage'
+import PushButton from '../containers/PushButton'
 
 const App = () => (
   <div>
@@ -11,7 +13,8 @@ const App = () => (
     <AddTodo />
     <VisibleTodoList />
     <Footer />
-		<ListPlayers />
+    <ListPlayers />
+    <PushButton />
   </div>
 )
 
