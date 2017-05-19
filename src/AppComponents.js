@@ -1,9 +1,15 @@
 import React from 'react'
-import Home from './pages/Home'
+//import Home from './pages/Home'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import AppBarComponent from './commons/components/AppBarComponent'
 import HeaderTab from './commons/components/HeaderTab'
+
+const Home = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+)
 
 const About = () => (
     <div>

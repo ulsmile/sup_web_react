@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import Home from '../../../pages/Home'
+import Mypage from '../../../pages/Mypage'
+import Chart from '../../../pages/Chart'
+import RecordTime from '../../../pages/RecordTime'
+import Ranking from '../../../pages/Ranking'
 
 const styles = {
   headline: {
@@ -19,19 +22,22 @@ const HeaderTab = () => (
       <Tabs>
         <Tab label="Mypage" value="0">
           <div>
+            <Mypage />
           </div>
         </Tab>
         <Tab label="Chart" value="1">
           <div>
-            <Home />
+            <Chart />
           </div>
         </Tab>
-        <Tab label="RecordingTime" value="2">
+        <Tab label="RecordTime" value="2">
           <div>
+            <RecordTime />
           </div>
         </Tab>
-        <Tab label="RankingInfo" value="3">
+        <Tab label="Ranking" value="3">
           <div>
+            <Ranking />
           </div>
         </Tab>
       </Tabs>
