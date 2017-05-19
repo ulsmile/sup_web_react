@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import AppBarComponent from './commons/components/AppBarComponent'
+import HeaderTab from './commons/components/HeaderTab'
 
 const About = () => (
     <div>
@@ -24,6 +25,7 @@ const Child = ({ match }) => (
 const AppComponents = () => (
     <div style={{ padding: '10px 10px' }}>
 			<AppBarComponent />
+					 <HeaderTab />
 	       <Router>
            <div style={{padding: '10px'}}>
                <p>

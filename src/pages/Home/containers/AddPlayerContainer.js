@@ -19,7 +19,7 @@ let AddPlayerContainer = ({ dispatch }) => {
           input = node
         }} />
         <button type="submit">
-          Add Player
+          会員登録
         </button>
       </form>
     </div>
