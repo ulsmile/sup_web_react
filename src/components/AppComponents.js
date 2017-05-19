@@ -6,9 +6,7 @@ import AddPlayerContainer from '../containers/AddPlayerContainer'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import HomeComponent from './Home/HomeComponent'
-//import AppBar from 'material-ui/AppBar';
 import AppBarComponent from './AppBarComponent'
-//import PlayerListContainer from '../containers/PlayerListContainer'
 
 //const AppComponents = () => (
 //  <div>
@@ -35,7 +33,7 @@ const Contact = () => (
 
 const Child = ({ match }) => (
     <div>
-        <p>今{match.params.id}を表示しています</p>
+        <p>{match.params.id}</p>
     </div>
 )
 const AppComponents = () => (
@@ -48,14 +46,19 @@ const AppComponents = () => (
                    <Link to="/about">About</Link>&nbsp;
                    <Link to="/contact">Contact</Link>&nbsp;
                    <Link to="/add_player">メンバー専用</Link>&nbsp;
+                   <Link to="/マイページ">todo</Link>&nbsp;
                </p>
 
+               <Route path="/:id" component={Child}/>
                <Route exact path="/" component={HomeComponent}/>
                <Route path="/about" component={About}/>
                <Route path="/contact" component={Contact}/>
                <Route path="/add_player" component={AddPlayerContainer}/>
+               <Route path="/マイページ" component={AddTodoContainer}/>
+               <Route path="/マイページ" component={VisibleTodoListContainer}/>
+               <Route path="/マイページ" component={FooterComponent}/>
 
-               <Route path="/:id" component={Child}/>
+
 					</div>
        </Router>
     </div>
