@@ -10,7 +10,7 @@ const styles = {
   },
 };
 
-export default class BoardTypes extends React.Component {
+export default class RankingBoardTypes extends React.Component {
 
       constructor(props) {
         super(props);

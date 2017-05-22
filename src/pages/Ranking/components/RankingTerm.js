@@ -10,7 +10,7 @@ const styles = {
   },
 };
 
-export default class Term extends React.Component {
+export default class RankingTerm extends React.Component {
 
       constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ export default class Term extends React.Component {
       render() {
         return (
           <div>
-            <RadioButtonGroup  name="term" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup  name="rankingTerm" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
               <RadioButton
                 value="one_month"
                 label="月間"

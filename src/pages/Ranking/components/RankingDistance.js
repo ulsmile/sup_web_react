@@ -10,11 +10,11 @@ const styles = {
   },
 };
 
-export default class Term extends React.Component {
+export default class RankingDistance extends React.Component {
 
       constructor(props) {
         super(props);
-        this.state = {Selected: "one_month"};
+        this.state = {Selected: "3"};
       }
 
       handleSelect(e) {
@@ -25,22 +25,18 @@ export default class Term extends React.Component {
       render() {
         return (
           <div>
-            <RadioButtonGroup  name="term" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup  name="rankingDistance" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
               <RadioButton
-                value="one_month"
-                label="月間"
+                value="3"
+                label="3km"
               />
               <RadioButton
-                value="three_months"
-                label="3ヶ月"
+                value="6"
+                label="6km"
               />
               <RadioButton
-                value="year"
-                label="年間"
-              />
-              <RadioButton
-                value="all"
-                label="すべて"
+                value="9"
+                label="9km"
               />
             </RadioButtonGroup>
           </div>

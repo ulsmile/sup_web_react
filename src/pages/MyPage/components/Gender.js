@@ -10,21 +10,32 @@ const styles = {
   },
 };
 
-const Gender = () => (
-  <div>
-    <RadioButtonGroup name="gender" defaultSelected="not_light">
-      <RadioButton
-        value="not_light"
-        label="男"
-        style={styles.radioButton}
-      />
-      <RadioButton
-        value="light"
-        label="女"
-        style={styles.radioButton}
-      />
-    </RadioButtonGroup>
-  </div>
-);
+export default class Gender extends React.Component {
 
-export default Gender;
+      constructor(props) {
+        super(props);
+        this.state = {Selected: "not_light"};
+      }
+
+      handleSelect(e) {
+        this.setState({Selected: e.target.value});
+        console.log(this.state.Selected)
+      }
+
+      render() {
+        return (
+          <div>
+            <RadioButtonGroup  name="gender" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+              <RadioButton
+                value="not_light"
+                label="男"
+              />
+              <RadioButton
+                value="light"
+                label="女"
+              />
+            </RadioButtonGroup>
+          </div>
+        );
+      }
+    }

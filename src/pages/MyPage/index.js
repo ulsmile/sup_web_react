@@ -5,6 +5,7 @@ import RankingPermission from './components/RankingPermission';
 import HpPermission from './components/HpPermission';
 import Name from './components/Name';
 import LinkList from './components/LinkList'; 
+import Gender from './components/Gender'; 
 
 
 const Mypage = () => {
@@ -17,6 +18,7 @@ const Mypage = () => {
         <Name />
         <RankingPermission />
         <HpPermission />
+        <Gender />
         <LinkList />
       </div>
     </MuiThemeProvider>

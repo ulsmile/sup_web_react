@@ -1,10 +1,10 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Avatar from 'material-ui/Avatar';
-import Gender from './components/Gender';
-import BoardTypes from './components/BoardTypes';
-import Distance from './components/Distance';
-import Term from './components/Term';
+import RankingGender from './components/RankingGender';
+import RankingBoardTypes from './components/RankingBoardTypes';
+import RankingDistance from './components/RankingDistance';
+import RankingTerm from './components/RankingTerm';
 
 const Ranking = () => (
   <MuiThemeProvider>
@@ -13,10 +13,10 @@ const Ranking = () => (
 
       <hr/>
 
-      <Gender />
-      <BoardTypes />
-      <Distance />
-      <Term />
+      <RankingGender />
+      <RankingBoardTypes />
+      <RankingDistance />
+      <RankingTerm />
     </div>
   </MuiThemeProvider>
 );

@@ -9,37 +9,30 @@ const styles = {
     marginBottom: 16,
   },
 };
-//var check = true;
-//console.dir(check)
-//console.dir(state)
 
-//const Propsss = (check=true) => {
-//  return {
-//    <div>
-//      document.write(check);
-//    </div>
-//  }
-//}
-const RankingPermission = ({ check,onChange }) => {
-//const RankingPermission = ({ onChange,state }) => (
-  console.dir(check)
-  return(
-    <div style={styles.block}>
-      <Checkbox
-        label="ランキング掲載許可"
-        style={styles.checkbox}
-        checked={check}
-  //      checked={this.state.check}
-  //      onCheck={this.setRankingPermission.bind(this)}
-        onCheck={() => (onChange)}
-      />
-    </div>
-  )
-}
+export default class RankingPermission extends React.Component {
 
-RankingPermission.propTypes = {
-  onChange: PropTypes.func,
-  check: PropTypes.bool.isRequired
-}
-export default RankingPermission;
+      constructor(props) {
+        super(props);
+        this.state = {Checked: false};
+      }
 
+      handleCheck() {
+        this.setState({Checked: !this.state.Checked});
+        console.log(this.state.Checked)
+      }
+
+      render() {
+        return (
+          <div>
+            <Checkbox
+                label="ランキング掲載許可"
+                style={styles.checkbox}
+                defaultChecked={this.state.Checked}
+                onCheck={this.handleCheck.bind(this)}
+              />
+
+          </div>
+        );
+      }
+    }

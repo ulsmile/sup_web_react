@@ -10,26 +10,36 @@ const styles = {
   },
 };
 
-const Distance = () => (
-  <div>
-    <RadioButtonGroup name="distance" defaultSelected="3">
-      <RadioButton
-        value="3"
-        label="3km"
-        style={styles.radioButton}
-      />
-      <RadioButton
-        value="6"
-        label="6km"
-        style={styles.radioButton}
-      />
-      <RadioButton
-        value="9"
-        label="9km"
-        style={styles.radioButton}
-      />
-    </RadioButtonGroup>
-  </div>
-);
+export default class Distance extends React.Component {
 
-export default Distance;
+      constructor(props) {
+        super(props);
+        this.state = {Selected: "3"};
+      }
+
+      handleSelect(e) {
+        this.setState({Selected: e.target.value});
+        console.log(this.state.Selected)
+      }
+
+      render() {
+        return (
+          <div>
+            <RadioButtonGroup  name="distance" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+              <RadioButton
+                value="3"
+                label="3km"
+              />
+              <RadioButton
+                value="6"
+                label="6km"
+              />
+              <RadioButton
+                value="9"
+                label="9km"
+              />
+            </RadioButtonGroup>
+          </div>
+        );
+      }
+    }
