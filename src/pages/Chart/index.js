@@ -5,6 +5,7 @@ import Name from './components/Name';
 import BoardTypes from './components/BoardTypes';
 import Distance from './components/Distance';
 import Term from './components/Term';
+import SimpleLineChart from './components/SimpleLineChart';
 
 const Chart = () => (
   <MuiThemeProvider>
@@ -14,6 +15,7 @@ const Chart = () => (
       <BoardTypes />
       <Distance />
       <Term />
+      <SimpleLineChart />
     </div>
   </MuiThemeProvider>
 );
