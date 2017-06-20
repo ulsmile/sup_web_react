@@ -2,11 +2,13 @@ import { combineReducers } from 'redux'
 import todosReducer from './todosReducer'
 import visibilityFilterReducer from './visibilityFilterReducer'
 import playersReducer from './playersReducer'
+import check from '../pages/MyPage/reducers'
 
-const combinedReducers = combineReducers({
+const reducers = combineReducers({
   todosReducer,
   visibilityFilterReducer,
-	playersReducer
+  playersReducer,
+  check
 })
 
-export default combinedReducers
+export default reducers

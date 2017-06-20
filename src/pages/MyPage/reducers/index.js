@@ -1,10 +1,12 @@
-const check = (state = true, action) => {
-	  switch (action.type) {
-	    case 'SET_RANKING_PERMISSION':
-		    return action.check
-	    default:
-	      return state
-	  }
+const check = (state = false, action) => {
+  const url = 'https://api.github.com/users'
+  switch (action.type) {
+    case 'CHANGE_CHECK':
+           return !state
+     //    return action.check
+    default:
+      return state
+  }
 }
 
 export default check

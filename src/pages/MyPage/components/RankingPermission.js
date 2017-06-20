@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 
+const url = 'https://api.github.com/users'
 const styles = {
   block: {
     maxWidth: 250,
@@ -10,29 +11,33 @@ const styles = {
   },
 };
 
-export default class RankingPermission extends React.Component {
+/*fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    var Checked = json[1]["site_admin"]
+    console.dir(Checked)
+  })
+  .then(function(func) {*/
+const RankingPermission  = ({ Checked, handleCheck }) => {
+           return (
+             <div>
+               <Checkbox
+                   label="ランキング掲載許可"
+                   style={styles.checkbox}
+                   defaultChecked={Checked}
+                   onCheck={handleCheck}
+                 />
 
-      constructor(props) {
-        super(props);
-        this.state = {Checked: false};
-      }
+             </div>
+           );
+}
+RankingPermission.propTypes = {
+  Checked: PropTypes.bool,
+  handleCheck: PropTypes.func
+}
+//  })
 
-      handleCheck() {
-        this.setState({Checked: !this.state.Checked});
-        console.log(this.state.Checked)
-      }
 
-      render() {
-        return (
-          <div>
-            <Checkbox
-                label="ランキング掲載許可"
-                style={styles.checkbox}
-                defaultChecked={this.state.Checked}
-                onCheck={this.handleCheck.bind(this)}
-              />
-
-          </div>
-        );
-      }
-    }
+export default RankingPermission
