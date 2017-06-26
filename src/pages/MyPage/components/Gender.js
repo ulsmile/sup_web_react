@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
@@ -10,32 +10,24 @@ const styles = {
   },
 };
 
-export default class Gender extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {Selected: "not_light"};
-      }
-
-      handleSelect(e) {
-        this.setState({Selected: e.target.value});
-        console.log(this.state.Selected)
-      }
-
-      render() {
+const Gender  = ({ Selected, handleSelect }) => {
         return (
           <div>
-            <RadioButtonGroup  name="gender" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup name="gender" defaultSelected={Selected} onChange={handleSelect} style={styles.radioButton}>
               <RadioButton
-                value="not_light"
+                value="male"
                 label="男"
               />
               <RadioButton
-                value="light"
+                value="female"
                 label="女"
               />
             </RadioButtonGroup>
           </div>
         );
-      }
-    }
+}
+Gender.propTypes = {
+  Selected: PropTypes.string,
+  handleSelect: PropTypes.func
+}
+export default Gender
