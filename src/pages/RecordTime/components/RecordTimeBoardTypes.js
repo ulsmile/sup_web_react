@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
@@ -10,22 +10,10 @@ const styles = {
   },
 };
 
-export default class RecordTimeBoardTypes extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {Selected: "hard"};
-      }
-
-      handleSelect(e) {
-        this.setState({Selected: e.target.value});
-        console.log(this.state.Selected)
-      }
-
-      render() {
+const RecordTimeBoardTypes  = ({ Selected, handleSelect }) => {
         return (
           <div>
-            <RadioButtonGroup  name="recordTimeBoardTypes" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup  name="recordTimeBoardTypes" defaultSelected={Selected} onChange={handleSelect} style={styles.radioButton}>
               <RadioButton
                 value="hard"
                 label="ハードボード"
@@ -41,5 +29,9 @@ export default class RecordTimeBoardTypes extends React.Component {
             </RadioButtonGroup>
           </div>
         );
-      }
-    }
+}
+RecordTimeBoardTypes.propTypes = {
+  Selected: PropTypes.string,
+  handleSelect: PropTypes.func
+}
+export default RecordTimeBoardTypes

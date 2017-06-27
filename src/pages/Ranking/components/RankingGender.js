@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
@@ -10,39 +10,28 @@ const styles = {
   },
 };
 
-export default class RankingGender extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {MaleChecked: false,FemaleChecked: false};
-      }
-
-      maleHandleCheck() {
-        this.setState({MaleChecked: !this.state.MaleChecked});
-        console.log(this.state.MaleChecked)
-      }
-      femaleHandleCheck() {
-        this.setState({FemaleChecked: !this.state.FemaleChecked});
-        console.log(this.state.FemaleChecked)
-      }
-
-      render() {
+const RankingGender  = ({ MaleChecked, maleHandleCheck, FemaleChecked, femaleHandleCheck}) => {
         return (
           <div style={styles.block}>
             <Checkbox
               label="男性"
               style={styles.checkbox}
-              defaultChecked={this.state.MaleChecked}
-              onCheck={this.maleHandleCheck.bind(this)}
+              defaultChecked={MaleChecked}
+              onCheck={maleHandleCheck}
             />
             <Checkbox
               label="女性"
               style={styles.checkbox}
-              defaultChecked={this.state.FemaleChecked}
-              onCheck={this.femaleHandleCheck.bind(this)}
+              defaultChecked={FemaleChecked}
+              onCheck={femaleHandleCheck}
             />
           </div>
         );
-      }
-    }
-
+}
+RankingGender.propTypes = {
+  MaleChecked: PropTypes.bool,
+  FemaleChecked: PropTypes.bool,
+  maleHandleCheck: PropTypes.func,
+  femaleHandleCheck: PropTypes.func
+}
+export default RankingGender

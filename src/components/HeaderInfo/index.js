@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import MypageInfo from './Mypage';
+import Mypage from '../../pages/Mypage';
 import ChartInfo from './Chart';
 import RecordingTimeInfo from './RecordingTime';
 import RankingInfo from './Ranking';
@@ -16,7 +16,7 @@ const HeaderInfo = () => (
       <Tabs>
         <Tab label="Mypage" value="0">
           <div>
-            <MypageInfo />
+            <Mypage />
           </div>
         </Tab>
         <Tab label="Chart" value="1">

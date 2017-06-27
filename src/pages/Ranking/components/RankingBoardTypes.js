@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
@@ -10,49 +10,37 @@ const styles = {
   },
 };
 
-export default class RankingBoardTypes extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {HardChecked: false,RaceChecked: false,InflatableChecked: false,};
-      }
-
-      hardHandleCheck() {
-        this.setState({HardChecked: !this.state.HardChecked});
-        console.log(this.state.HardChecked)
-      }
-      raceHandleCheck() {
-        this.setState({RaceChecked: !this.state.RaceChecked});
-        console.log(this.state.RaceChecked)
-      }
-      inflatableHandleCheck() {
-        this.setState({InflatableChecked: !this.state.InflatableChecked});
-        console.log(this.state.InflatableChecked)
-      }
-
-      render() {
+const RankingBoardTypes  = ({ HardChecked, hardHandleCheck, RaceChecked, raceHandleCheck, InflatableChecked, inflatableHandleCheck}) => {
         return (
           <div style={styles.block}>
             <Checkbox
               label="ハードボード"
               style={styles.checkbox}
-              defaultChecked={this.state.HardChecked}
-              onCheck={this.hardHandleCheck.bind(this)}
+              defaultChecked={HardChecked}
+              onCheck={hardHandleCheck}
             />
             <Checkbox
               label="レースボード"
               style={styles.checkbox}
-              defaultChecked={this.state.RaceChecked}
-              onCheck={this.raceHandleCheck.bind(this)}
+              defaultChecked={RaceChecked}
+              onCheck={raceHandleCheck}
             />
             <Checkbox
               label="インフレ-タブルボード"
               style={styles.checkbox}
-              defaultChecked={this.state.InflatableChecked}
-              onCheck={this.inflatableHandleCheck.bind(this)}
+              defaultChecked={InflatableChecked}
+              onCheck={inflatableHandleCheck}
             />
           </div>
         );
-      }
-    }
+}
 
+RankingBoardTypes.propTypes = {
+  HardChecked: PropTypes.bool,
+  RaceChecked: PropTypes.bool,
+  InflatableChecked: PropTypes.bool,
+  hardHandleCheck: PropTypes.func,
+  raceHandleCheck: PropTypes.func,
+  inflatableHandleCheck: PropTypes.func
+}
+export default RankingBoardTypes;

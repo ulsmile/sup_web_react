@@ -2,23 +2,24 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Avatar from 'material-ui/Avatar';
 import Name from './components/Name';
-import BoardTypes from './components/BoardTypes';
-import Distance from './components/Distance';
-import Term from './components/Term';
+import BoardTypesCheck from './containers/BoardTypesCheck';
+import DistanceSelect from './containers/DistanceSelect';
+import TermSelect from './containers/TermSelect';
 import SimpleLineChart from './components/SimpleLineChart';
 
-const Chart = () => (
+const Chart = () => {
+    return(
   <MuiThemeProvider>
     <div>
       <h1>グラフチャート</h1>
       <Name />
-      <BoardTypes />
-      <Distance />
-      <Term />
+      <BoardTypesCheck />
+      <DistanceSelect />
+      <TermSelect />
       <SimpleLineChart />
     </div>
   </MuiThemeProvider>
-);
-
+  )
+}
 
 export default Chart;

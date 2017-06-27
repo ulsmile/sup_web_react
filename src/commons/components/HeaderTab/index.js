@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Mypage from '../../../pages/Mypage'
@@ -20,26 +21,10 @@ const HeaderTab = () => (
   <MuiThemeProvider>
     <div>
       <Tabs>
-        <Tab label="Mypage" value="0">
-          <div>
-            <Mypage />
-          </div>
-        </Tab>
-        <Tab label="Chart" value="1">
-          <div>
-            <Chart />
-          </div>
-        </Tab>
-        <Tab label="RecordTime" value="2">
-          <div>
-            <RecordTime />
-          </div>
-        </Tab>
-        <Tab label="Ranking" value="3">
-          <div>
-            <Ranking />
-          </div>
-        </Tab>
+        <Tab label="Mypage" value="0" containerElement={<Link to='/mypage'/>} />
+        <Tab label="Chart" value="1" containerElement={<Link to='/chart'/>} />
+        <Tab label="RecordTime" value="2" containerElement={<Link to='/record_time'/>} />
+        <Tab label="Ranking" value="3" containerElement={<Link to='/ranking'/>} />
       </Tabs>
     </div>
   </MuiThemeProvider>

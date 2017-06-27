@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
@@ -10,22 +10,10 @@ const styles = {
   },
 };
 
-export default class RankingTerm extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {Selected: "one_month"};
-      }
-
-      handleSelect(e) {
-        this.setState({Selected: e.target.value});
-        console.log(this.state.Selected)
-      }
-
-      render() {
+const RankingTerm  = ({ Selected, handleSelect }) => {
         return (
           <div>
-            <RadioButtonGroup  name="rankingTerm" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup  name="rankingTerm" defaultSelected={Selected} onChange={handleSelect} style={styles.radioButton}>
               <RadioButton
                 value="one_month"
                 label="月間"
@@ -45,5 +33,9 @@ export default class RankingTerm extends React.Component {
             </RadioButtonGroup>
           </div>
         );
-      }
-    }
+}
+RankingTerm.propTypes = {
+  Selected: PropTypes.string,
+  handleSelect: PropTypes.func
+}
+export default RankingTerm

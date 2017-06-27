@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
@@ -10,22 +10,10 @@ const styles = {
   },
 };
 
-export default class RankingDistance extends React.Component {
-
-      constructor(props) {
-        super(props);
-        this.state = {Selected: "3"};
-      }
-
-      handleSelect(e) {
-        this.setState({Selected: e.target.value});
-        console.log(this.state.Selected)
-      }
-
-      render() {
+const RankingDistance  = ({ Selected, handleSelect }) => {
         return (
           <div>
-            <RadioButtonGroup  name="rankingDistance" defaultSelected={this.state.Selected} onChange={this.handleSelect.bind(this)} style={styles.radioButton}>
+            <RadioButtonGroup  name="rankingDistance" defaultSelected={Selected} onChange={handleSelect} style={styles.radioButton}>
               <RadioButton
                 value="3"
                 label="3km"
@@ -41,5 +29,9 @@ export default class RankingDistance extends React.Component {
             </RadioButtonGroup>
           </div>
         );
-      }
-    }
+}
+RankingDistance.propTypes = {
+  Selected: PropTypes.string,
+  handleSelect: PropTypes.func
+}
+export default RankingDistance
