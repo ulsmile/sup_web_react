@@ -23,6 +23,50 @@ export const changeName = (name) => {
     name
   }
 }
+
+/*export const selectSubreddit = (subreddit) => {
+  return {
+    type: 'SELECT_SUBREDDIT',
+    subreddit
+  }
+}
+
+export const invalidateSubreddit = (subreddit) => {
+  return {
+    type: 'INVALIDATE_SUBREDDIT',
+    subreddit
+  }
+}
+
+export const requestPosts = (subreddit) => {
+  return {
+    type: 'REQUEST_POSTS',
+    subreddit
+  }
+}
+
+export const receivePosts = (subreddit, json) => {
+  return {
+    type: 'RECEIVE_POSTS',
+    subreddit,
+    //posts: json.data.map(child => child.data),
+    posts: json[0]["site_admin"],
+    receivedAt: Date.now()
+  }
+}
+
+export function fetchPosts(subreddit) {
+  return function (dispatch) {
+    dispatch(requestPosts(subreddit))
+
+    return fetch('https://api.github.com/users')
+      .then(response => response.json())
+      .then(json =>
+        dispatch(receivePosts(subreddit, json))
+      )
+  }
+}*/
+
 /*export const changeToFemale = (select) => {
   return {
     type: 'MALE',
@@ -35,6 +79,7 @@ export const changeToMale = (select) => {
     select:select
   }
 }*/
+
 /*export const setRankingPermission = () => {
   const url = 'https://api.github.com/users'
   var check = false

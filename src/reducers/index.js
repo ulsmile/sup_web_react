@@ -23,6 +23,8 @@ import femaleChecked from '../pages/Ranking/reducers/femaleChecked'
 import rankingHardChecked from '../pages/Ranking/reducers/rankingHardChecked'
 import rankingRaceChecked from '../pages/Ranking/reducers/rankingRaceChecked'
 import rankingInflatableChecked from '../pages/Ranking/reducers/rankingInflatableChecked'
+import postsBySubreddit from '../commons/reducers/postsBySubreddit'
+import selectedSubreddit from '../commons/reducers/selectedSubreddit'
 
 const reducers = combineReducers({
   todosReducer,
@@ -48,7 +50,9 @@ const reducers = combineReducers({
   femaleChecked,
   rankingHardChecked,
   rankingRaceChecked,
-  rankingInflatableChecked
+  rankingInflatableChecked,
+  selectedSubreddit,
+  postsBySubreddit
 })
 
 export default reducers

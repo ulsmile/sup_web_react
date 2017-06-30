@@ -8,6 +8,7 @@ import thunkMiddleware from 'redux-thunk'
 import reducers from './reducers'
 import AppComponents from './AppComponents'
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { selectSubreddit,invalidateSubreddit, requestPosts, receivePosts, fetchPosts, changeRankingPermissionCheck } from './commons/actions'
 injectTapEventPlugin();
 
 //let store = createStore(todoApp)
@@ -20,6 +21,10 @@ const createStoreWithMiddleware = applyMiddleware(
 const store = createStoreWithMiddleware(reducers , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 //console.dir(store.getState())
 window.getState = ()=>(JSON.stringify(store.getState()));
+//store.dispatch(selectSubreddit('reactjs'))
+store.dispatch(fetchPosts('reactjs')).then(() =>
+  console.log(store.getState())
+)
 ReactDOM.render(
   <Provider store={store}>
     <AppComponents />

@@ -1,8 +1,12 @@
 import { connect } from 'react-redux'
 import React, { PropTypes } from 'react';
-import {getRankingPermissionIfNeeded, changeRankingPermissionCheck } from '../actions'
+import { changeRankingPermissionCheck } from '../actions'
 import RankingPermission from '../components/RankingPermission'
 
+/*dispatch(selectSubreddit('reactjs'))
+dispatch(fetchPosts('reactjs')).then(() =>
+  console.log(store.getState())
+)*/
 const mapStateToProps = (state) => {
   //console.dir(state.checks.check)
 //  var getRankingPermissionState = getRankingPermissionIfNeeded(state)

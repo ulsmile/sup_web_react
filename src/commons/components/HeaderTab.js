@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import Mypage from '../../../pages/Mypage'
-import Chart from '../../../pages/Chart'
-import RecordTime from '../../../pages/RecordTime'
-import Ranking from '../../../pages/Ranking'
+import Mypage from '../../pages/Mypage'
+import Chart from '../../pages/Chart'
+import RecordTime from '../../pages/RecordTime'
+import Ranking from '../../pages/Ranking'
 
 const styles = {
   headline: {

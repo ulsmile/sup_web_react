@@ -20,10 +20,22 @@ function rankingPermissionCheck(state = {
            //return !state
         return Object.assign({}, state, {isFetching: false, check: !state.check});
            //return state={isFetching:false,check:action.check}
-    case 'FETCH_RANKING_PERMISSION':
+/*    case 'FETCH_RANKING_PERMISSION':
         return Object.assign({}, state, {isFetching: true});
     case 'RECEIVE_RANKING_PERMISSION':
-        return Object.assign({}, state, {isFetching: false, check: action.check});
+        return Object.assign({}, state, {isFetching: false, check: action.check});*/
+    case 'REQUEST_POSTS':
+      return Object.assign({}, state, {
+        isFetching: true,
+//        didInvalidate: false
+      })
+    case 'RECEIVE_POSTS':
+      return Object.assign({}, state, {
+        isFetching: false,
+ //       didInvalidate: false,
+        check: action.rankingPermissionCheck,
+        lastUpdated: action.receivedAt
+      })
     default:
         return state;
     }
