@@ -5,7 +5,7 @@ import RankingTerm from '../components/RankingTerm'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.rankingTermSelect.select
+    Selected: state.rankingReducers.termSelect
   }
 }
 

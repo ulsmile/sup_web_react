@@ -5,9 +5,9 @@ import RankingBoardTypes from '../components/RankingBoardTypes'
 
 const mapStateToProps = (state) => {
   return {
-    HardChecked: state.rankingHardChecked.check,
-    RaceChecked: state.rankingRaceChecked.check,
-    InflatableChecked: state.rankingInflatableChecked.check,
+    HardChecked: state.rankingReducers.hardChecked,
+    RaceChecked: state.rankingReducers.raceChecked,
+    InflatableChecked: state.rankingReducers.inflatableChecked,
   }
 }
 

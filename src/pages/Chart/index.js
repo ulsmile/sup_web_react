@@ -6,8 +6,10 @@ import BoardTypesCheck from './containers/BoardTypesCheck';
 import DistanceSelect from './containers/DistanceSelect';
 import TermSelect from './containers/TermSelect';
 import SimpleLineChart from './components/SimpleLineChart';
+//import DistanceRadioButton from './DistanceRadioButton';
+//import changeDistanceSelect from './actions';
 
-const Chart = () => {
+const Chart = (action) => {
     return(
   <MuiThemeProvider>
     <div>
@@ -23,3 +25,12 @@ const Chart = () => {
 }
 
 export default Chart;
+/*const action = (changeDistanceSelect) => {
+    return{
+    action(e){
+           dispatch(changeDistanceSelect(e.target.value));
+    }
+  }
+}*/
+      //<DistanceRadioButton action={changeDistanceSelect} />
+      //<DistanceRadioButton handleSelect={action} />

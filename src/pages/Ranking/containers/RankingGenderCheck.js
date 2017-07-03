@@ -5,8 +5,8 @@ import RankingGender from '../components/RankingGender'
 
 const mapStateToProps = (state) => {
   return {
-    MaleChecked: state.maleChecked.check,
-    FemaleChecked: state.femaleChecked.check,
+    MaleChecked: state.rankingReducers.maleChecked,
+    FemaleChecked: state.rankingReducers.femaleChecked
   }
 }
 

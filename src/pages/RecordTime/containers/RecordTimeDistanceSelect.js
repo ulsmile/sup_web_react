@@ -5,7 +5,7 @@ import RecordTimeDistance from '../components/RecordTimeDistance'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.recordTimeDistanceSelect.select
+    Selected: state.recordTimeReducers.distanceSelect
   }
 }
 

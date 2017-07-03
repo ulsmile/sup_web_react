@@ -8,7 +8,7 @@ const style = {
 
 const Login  = ({onClick}) => (
    <div>
-     <RaisedButton label="ログイン" style={style} onTouchTap={onClick} containerElement={<Link to='/'/>} />
+     <RaisedButton label="ログイン" style={style} onTouchTap={onClick} containerElement={<Link to='/mypage'/>} />
    </div>
 );
 

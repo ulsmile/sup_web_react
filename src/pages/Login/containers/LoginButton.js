@@ -5,7 +5,7 @@ import Login from '../components/Login'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.loginButton.value
+    Selected: state.loginReducers.value
   }
 }
 

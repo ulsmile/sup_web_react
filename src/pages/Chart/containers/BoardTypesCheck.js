@@ -5,9 +5,9 @@ import BoardTypes from '../components/BoardTypes'
 
 const mapStateToProps = (state) => {
   return {
-    HardChecked: state.hardChecked.check,
-    RaceChecked: state.raceChecked.check,
-    InflatableChecked: state.inflatableChecked.check,
+    HardChecked: state.chartReducers.hardChecked,
+    RaceChecked: state.chartReducers.raceChecked,
+    InflatableChecked: state.chartReducers.inflatableChecked
   }
 }
 

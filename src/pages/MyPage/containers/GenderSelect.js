@@ -5,7 +5,7 @@ import Gender from '../components/Gender'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.genderSelect.select
+    Selected: state.myPageReducers.genderSelect
   }
 }
 

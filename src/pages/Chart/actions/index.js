@@ -1,48 +1,30 @@
-/*export const changeHpPermissionCheck = (check) => {
-  return {
-    type: 'CHANGE_HP_PERMISSION_CHECK',
-    check:check
-  }
-}
-export const changeGenderSelect = (select) => {
-  return {
-    type: 'CHANGE_GENDER_SELECT',
-    select
-  }
-}
-export const changeName = (name) => {
-  return {
-    type: 'CHANGE_NAME',
-    name
-  }
-}*/
-export const changeHardChecked = (check) => {
+export const changeHardChecked = (hardChecked) => {
   return {
     type: 'CHANGE_HARD_CHECKED',
-    check:check
+    hardChecked
   }
 }
-export const changeRaceChecked = (check) => {
+export const changeRaceChecked = (raceChecked) => {
   return {
     type: 'CHANGE_RACE_CHECKED',
-    check:check
+    raceChecked
   }
 }
-export const changeInflatableChecked = (check) => {
+export const changeInflatableChecked = (inflatableChecked) => {
   return {
     type: 'CHANGE_INFLATABLE_CHECKED',
-    check:check
+    inflatableChecked
   }
 }
-export const changeDistanceSelect = (select) => {
+export const changeDistanceSelect = (distanceSelect) => {
   return {
     type: 'CHANGE_DISTANCE_SELECT',
-    select
+    distanceSelect
   }
 }
-export const changeTermSelect = (select) => {
+export const changeTermSelect = (termSelect) => {
   return {
     type: 'CHANGE_TERM_SELECT',
-    select
+    termSelect
   }
 }

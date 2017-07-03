@@ -5,7 +5,7 @@ import Time from '../components/Time'
 
 const mapStateToProps = (state) => {
   return {
-    Value: state.timeRecord.time
+    Value: state.recordTimeReducers.time
   }
 }
 

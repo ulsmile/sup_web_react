@@ -1,42 +1,24 @@
-/*export const changeHpPermissionCheck = (check) => {
-  return {
-    type: 'CHANGE_HP_PERMISSION_CHECK',
-    check:check
-  }
-}
-export const changeGenderSelect = (select) => {
-  return {
-    type: 'CHANGE_GENDER_SELECT',
-    select
-  }
-}
-export const changeName = (name) => {
-  return {
-    type: 'CHANGE_NAME',
-    name
-  }
-}*/
 export const changeTime = (time) => {
   return {
     type: 'CHANGE_TIME',
     time
   }
 }
-export const changeRecordTimeDistanceSelect = (select) => {
+export const changeRecordTimeDistanceSelect = (distanceSelect) => {
   return {
     type: 'CHANGE_RECORD_TIME_DISTANCE_SELECT',
-    select
+    distanceSelect
   }
 }
-export const changeRecordTimeBoardTypesSelect = (select) => {
+export const changeRecordTimeBoardTypesSelect = (boardTypeSelect) => {
   return {
     type: 'CHANGE_RECORD_TIME_BOARD_TYPES_SELECT',
-    select
+    boardTypeSelect
   }
 }
-export const pushRegisterButton = (value) => {
+export const pushRegisterButton = (registerValue) => {
   return {
     type: 'PUSH_REGISTER_BUTTON',
-    value
+    registerValue
   }
 }

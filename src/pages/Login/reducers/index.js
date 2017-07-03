@@ -1,4 +1,4 @@
-function loginButton(state = {
+function loginReducers(state = {
     value: false
 }, action) {
     switch(action.type) {
@@ -8,4 +8,4 @@ function loginButton(state = {
         return state;
     }
 }
-export default loginButton
+export default loginReducers

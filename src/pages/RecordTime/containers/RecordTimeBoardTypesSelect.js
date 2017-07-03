@@ -5,7 +5,7 @@ import RecordTimeBoardTypes from '../components/RecordTimeBoardTypes'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.recordTimeBoardTypesSelect.select
+    Selected: state.recordTimeReducers.boardTypesSelect
   }
 }
 

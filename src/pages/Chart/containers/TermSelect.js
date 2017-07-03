@@ -5,7 +5,7 @@ import Term from '../components/Term'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.termSelect.select
+    Selected: state.chartReducers.termSelect
   }
 }
 

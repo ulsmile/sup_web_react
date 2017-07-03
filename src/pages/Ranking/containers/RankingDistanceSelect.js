@@ -5,7 +5,7 @@ import RankingDistance from '../components/RankingDistance'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.rankingDistanceSelect.select
+    Selected: state.rankingReducers.distanceSelect
   }
 }
 

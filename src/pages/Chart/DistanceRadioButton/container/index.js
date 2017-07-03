@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import React, { PropTypes } from 'react';
-import { changeDistanceSelect } from '../actions'
-import Distance from '../components/Distance'
+import view from '../view'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,16 +10,16 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
-    handleSelect(e){
-           dispatch(changeDistanceSelect(e.target.value));
-    }
- }
+    handleSelect
+   }
 }
 
-const DistanceSelect = connect(
+const DistanceRadioButton = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Distance)
+)(view)
 
-export default DistanceSelect
+export default DistanceRadioButton
+/*    handleSelect(e){
+           dispatch(changeDistanceSelect(e.target.value));
+    }*/

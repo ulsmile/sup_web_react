@@ -7,7 +7,7 @@ const style = {
 };
 const Button  = ({onClick}) => (
    <div>
-     <RaisedButton label="登録" style={style} onTouchTap={onClick} containerElement={<Link to='/mypage'/>} />
+     <RaisedButton label="登録" style={style} onTouchTap={onClick} />
    </div>
 );
 

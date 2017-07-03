@@ -1,42 +1,42 @@
-export const changeRankingDistanceSelect = (select) => {
+export const changeRankingDistanceSelect = (distanceSelect) => {
   return {
     type: 'CHANGE_RANKING_DISTANCE_SELECT',
-    select
+    distanceSelect
   }
 }
-export const changeRankingTermSelect = (select) => {
+export const changeRankingTermSelect = (termSelect) => {
   return {
     type: 'CHANGE_RANKING_TERM_SELECT',
-    select
+    termSelect
   }
 }
-export const changeMaleChecked = (check) => {
+export const changeMaleChecked = (maleChecked) => {
   return {
     type: 'CHANGE_MALE_CHECKED',
-    check:check
+    maleChecked
   }
 }
-export const changeFemaleChecked = (check) => {
+export const changeFemaleChecked = (femaleChecked) => {
   return {
     type: 'CHANGE_FEMALE_CHECKED',
-    check:check
+    femaleChecked
   }
 }
-export const changeRankingHardChecked = (check) => {
+export const changeRankingHardChecked = (hardChecked) => {
   return {
     type: 'CHANGE_RANKING_HARD_CHECKED',
-    check:check
+    hardChecked
   }
 }
-export const changeRankingRaceChecked = (check) => {
+export const changeRankingRaceChecked = (raceChecked) => {
   return {
     type: 'CHANGE_RANKING_RACE_CHECKED',
-    check:check
+    raceChecked
   }
 }
-export const changeRankingInflatableChecked = (check) => {
+export const changeRankingInflatableChecked = (inflatableChecked) => {
   return {
     type: 'CHANGE_RANKING_INFLATABLE_CHECKED',
-    check:check
+    inflatableChecked
   }
 }

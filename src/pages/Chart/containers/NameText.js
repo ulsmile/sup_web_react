@@ -5,7 +5,7 @@ import Name from '../components/Name'
 
 const mapStateToProps = (state) => {
   return {
-    Value: state.changeNameText.name
+    Value: state.chartReducers.changeNameText
   }
 }
 
