@@ -1,8 +1,11 @@
 function recordTimeReducers(state = {
+    isFetching: false,
     boardTypeSelect: "hard",
     distanceSelect: "3",
     registerValue: false,
-    time: ""
+    time: "",
+    //weather:{windChill:"10", windDirection:"", windSpeed:"", humidity:"", sunrise:"", sunset:"", date:"", temp:"", text:""}
+    windChill:"10", windDirection:"", windSpeed:"", humidity:"", sunrise:"", sunset:"", date:"", temp:"", text:""
 }, action) {
     switch(action.type) {
     case 'CHANGE_RECORD_TIME_BOARD_TYPES_SELECT':
@@ -13,6 +16,23 @@ function recordTimeReducers(state = {
         return Object.assign({}, state, {registerValue: !state.registerValue})
     case 'CHANGE_TIME':
         return Object.assign({}, state, {time: action.time})
+    case 'REQUEST_POSTS':
+      return Object.assign({}, state, {
+        isFetching: true,
+      });
+    case 'RECEIVE_WEATHER_POSTS':
+      return Object.assign({}, state, {
+        isFetching: false,
+        windSpeed: action.windSpeed,
+        windChill: action.windChill,
+        windDirection: action.windDirection,
+        humidity: action.humidity,
+        sunrise: action.sunrise,
+        sunset: action.sunset,
+        date: action.date,
+        temp: action.temp,
+        text: action.text
+      });
     default:
         return state;
     }

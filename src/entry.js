@@ -8,7 +8,7 @@ import thunkMiddleware from 'redux-thunk'
 import reducers from './reducers'
 import AppComponents from './AppComponents'
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { selectSubreddit,invalidateSubreddit, requestPosts, receivePosts, fetchPosts, changeRankingPermissionCheck } from './commons/actions'
+import { fetchPosts, fetchWeatherPosts} from './commons/actions'
 injectTapEventPlugin();
 
 //let store = createStore(todoApp)
@@ -22,7 +22,13 @@ const store = createStoreWithMiddleware(reducers , window.__REDUX_DEVTOOLS_EXTEN
 //console.dir(store.getState())
 window.getState = ()=>(JSON.stringify(store.getState()));
 //store.dispatch(selectSubreddit('reactjs'))
-store.dispatch(fetchPosts('reactjs')).then(() =>
+
+const url1 = 'https://api.github.com/users'
+const weatherUrl = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Hiratsuka-shi%2C%20Japan%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+store.dispatch(fetchPosts('url1', url1)).then(() =>
+  console.log(store.getState())
+)
+store.dispatch(fetchWeatherPosts('weather', weatherUrl)).then(() =>
   console.log(store.getState())
 )
 ReactDOM.render(

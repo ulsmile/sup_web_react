@@ -5,6 +5,7 @@ import TimeRecord from './containers/TimeRecord';
 import RecordTimeDistanceSelect from './containers/RecordTimeDistanceSelect';
 import RecordTimeBoardTypesSelect from './containers/RecordTimeBoardTypesSelect';
 import RegisterButton from './containers/RegisterButton';
+import WeatherText from './containers/WeatherText';
 
 const RecordingTime = () => (
   <MuiThemeProvider>
@@ -18,6 +19,7 @@ const RecordingTime = () => (
       <h3>ボードの種類</h3>
       <RecordTimeBoardTypesSelect />
       <h3>天気情報</h3>
+      <WeatherText />
       <RegisterButton />
     </div>
   </MuiThemeProvider>
