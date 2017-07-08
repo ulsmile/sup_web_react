@@ -24,10 +24,12 @@ export const receivePosts = (subreddit, json) => {
     type: 'RECEIVE_POSTS',
     subreddit,
     //posts: json.data.map(child => child.data),
-    name: json[0]["login"],
-    rankingPermissionCheck: json[1]["site_admin"],
-    hpPermissionCheck: json[0]["site_admin"],
-    receivedAt: Date.now()
+    name: json[0]["name"],
+    rankingPermissionCheck: json[0]["ranking_permission"],
+    hpPermissionCheck: json[0]["hp_permission"],
+    //genderSelect: json[0]["gender"],
+    records: json[1]["records"],
+    //receivedAt: Date.now()
   }
 }
 

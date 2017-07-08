@@ -1,13 +1,12 @@
-function myPageReducers(state = {
+function commonsReducers(state = {
     isFetching: false,
-/*    name: "富澤慧哉",
+    name: "富澤慧哉",
     genderSelect: "male",
     hpPermissionCheck: false,
-    rankingPermissionCheck: false,*/
-    registerValue: false
+    rankingPermissionCheck: false,
 }, action) {
     switch(action.type) {
-/*    case 'REQUEST_POSTS':
+    case 'REQUEST_POSTS':
       return Object.assign({}, state, {
         isFetching: true,
       });
@@ -17,7 +16,8 @@ function myPageReducers(state = {
         name: action.name,
         genderSelect: action.select,
         hpPermissionCheck: action.hpPermissionCheck,
-        rankingPermissionCheck: action.rankingPermissionCheck
+        rankingPermissionCheck: action.rankingPermissionCheck,
+        records: action.records,
       });
     case 'CHANGE_NAME':
         return Object.assign({}, state, {name: action.name});
@@ -26,11 +26,9 @@ function myPageReducers(state = {
     case 'CHANGE_HP_PERMISSION_CHECK':
         return Object.assign({}, state, {hpPermissionCheck: !state.hpPermissionCheck})
     case 'CHANGE_RANKING_PERMISSION_CHECK':
-        return Object.assign({}, state, {rankingPermissionCheck: !state.rankingPermissionCheck});*/
-    case 'PUSH_MYPAGE_REGISTER_BUTTON':
-        return Object.assign({}, state, {registerValue: !state.registerValue})
+        return Object.assign({}, state, {rankingPermissionCheck: !state.rankingPermissionCheck});
     default:
         return state;
     }
 }
-export default myPageReducers
+export default commonsReducers

@@ -5,7 +5,7 @@ import Name from '../components/Name'
 
 const mapStateToProps = (state) => {
   return {
-    Value: state.myPageReducers.name
+    Value: state.commonsReducers.name
   }
 }
 

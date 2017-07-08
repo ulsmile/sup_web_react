@@ -5,7 +5,7 @@ import RankingPermission from '../components/RankingPermission'
 
 const mapStateToProps = (state) => {
   return {
-    Checked: state.myPageReducers.rankingPermissionCheck,
+    Checked: state.commonsReducers.rankingPermissionCheck,
   }
 }
 

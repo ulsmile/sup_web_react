@@ -5,7 +5,7 @@ import HpPermission from '../components/HpPermission'
 
 const mapStateToProps = (state) => {
   return {
-    Checked: state.myPageReducers.hpPermissionCheck,
+    Checked: state.commonsReducers.hpPermissionCheck,
   }
 }
 

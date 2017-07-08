@@ -23,7 +23,8 @@ const store = createStoreWithMiddleware(reducers , window.__REDUX_DEVTOOLS_EXTEN
 window.getState = ()=>(JSON.stringify(store.getState()));
 //store.dispatch(selectSubreddit('reactjs'))
 
-const url1 = 'https://api.github.com/users'
+//const url1 = 'https://api.github.com/users'
+const url1 = 'http://localhost:3001/players'
 const weatherUrl = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Hiratsuka-shi%2C%20Japan%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
 store.dispatch(fetchPosts('url1', url1)).then(() =>
   console.log(store.getState())

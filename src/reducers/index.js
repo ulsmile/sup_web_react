@@ -4,8 +4,8 @@ import loginReducers from '../pages/Login/reducers'
 import chartReducers from '../pages/Chart/reducers'
 import recordTimeReducers from '../pages/RecordTime/reducers'
 import rankingReducers from '../pages/Ranking/reducers'
-import postsBySubreddit from '../commons/reducers/postsBySubreddit'
-//import selectedSubreddit from '../commons/reducers/selectedSubreddit'
+import commonsReducers from '../commons/reducers'
+import postSubreddit from '../commons/reducers/postSubreddit'
 
 const reducers = combineReducers({
   myPageReducers,
@@ -13,8 +13,8 @@ const reducers = combineReducers({
   chartReducers,
   rankingReducers,
   recordTimeReducers,
-//  selectedSubreddit,
-  postsBySubreddit
+  commonsReducers,
+  postSubreddit
 })
 
 export default reducers
