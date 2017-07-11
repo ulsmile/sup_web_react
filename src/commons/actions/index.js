@@ -20,6 +20,17 @@ export const requestPosts = (subreddit) => {
 }
 
 export const receivePosts = (subreddit, json) => {
+  const Records = []
+  var Time = 0
+  for(var i=0 ; i<=10 ; i++){
+     Time =  json[i]["records"][0]["record_time"]
+     Time = ((Number(Time[0])*10+Number(Time[1]))*60+Number(Time[3])*10+Number(Time[4]))*60+Number(Time[6])*10+Number(Time[7])
+    //json[i]["records"][0]["record_time"] = Time
+    // second_records[i] = json[i]["records"][0]
+     Records[i] = json[i]["records"][0]
+     Records[i]["record_second_time"] = Time
+  }
+  console.dir(Records)   
   return {
     type: 'RECEIVE_POSTS',
     subreddit,
@@ -28,7 +39,8 @@ export const receivePosts = (subreddit, json) => {
     rankingPermissionCheck: json[0]["ranking_permission"],
     hpPermissionCheck: json[0]["hp_permission"],
     //genderSelect: json[0]["gender"],
-    records: json[1]["records"],
+    records: Records,
+    //records: json[0]["records"],
     //receivedAt: Date.now()
   }
 }
