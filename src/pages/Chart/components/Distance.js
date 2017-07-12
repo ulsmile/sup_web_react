@@ -31,7 +31,7 @@ const Distance  = ({ Selected, handleSelect }) => {
         );
 }
 Distance.propTypes = {
-  Selected: PropTypes.string,
+  Selected: PropTypes.number,
   handleSelect: PropTypes.func
 }
 export default Distance

@@ -5,8 +5,7 @@ import Name from './components/Name';
 import BoardTypesCheck from './containers/BoardTypesCheck';
 import DistanceSelect from './containers/DistanceSelect';
 import TermSelect from './containers/TermSelect';
-import SimpleLineChart from './components/SimpleLineChart';
-import TimeChartContainer from './containers/TimeChartContainer';
+import ChartTableContainer from './containers/ChartTableContainer';
 //import DistanceRadioButton from './DistanceRadioButton';
 //import changeDistanceSelect from './actions';
 
@@ -19,7 +18,7 @@ const Chart = (action) => {
       <BoardTypesCheck />
       <DistanceSelect />
       <TermSelect />
-      <TimeChartContainer />
+      <ChartTableContainer />
     </div>
   </MuiThemeProvider>
   )

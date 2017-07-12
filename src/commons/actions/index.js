@@ -22,13 +22,17 @@ export const requestPosts = (subreddit) => {
 export const receivePosts = (subreddit, json) => {
   const Records = []
   var Time = 0
-  for(var i=0 ; i<=10 ; i++){
+  var Name = ""
+  console.dir(json.length)
+  for(var i=0 ; i<json.length ; i++){
      Time =  json[i]["records"][0]["record_time"]
      Time = ((Number(Time[0])*10+Number(Time[1]))*60+Number(Time[3])*10+Number(Time[4]))*60+Number(Time[6])*10+Number(Time[7])
     //json[i]["records"][0]["record_time"] = Time
     // second_records[i] = json[i]["records"][0]
      Records[i] = json[i]["records"][0]
      Records[i]["record_second_time"] = Time
+     Name =  json[i]["name"]
+     Records[i]["name"] = Name
   }
   console.dir(Records)   
   return {
