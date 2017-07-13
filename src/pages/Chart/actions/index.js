@@ -28,3 +28,15 @@ export const changeTermSelect = (termSelect) => {
     termSelect
   }
 }
+export const changeName = (searchText) => {
+  return {
+    type: 'CHANGE_FILTER_NAME',
+    searchText
+  }
+}
+export const deleteName = (Text) => {
+  return {
+    type: 'DELETE_FILTER_NAME',
+    Text
+  }
+}

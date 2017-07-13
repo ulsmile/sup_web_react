@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch,Select) => {
+const mapDispatchToProps = (dispatch) => {
   return {
 
     onChange(e){
