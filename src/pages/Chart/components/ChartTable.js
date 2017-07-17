@@ -56,6 +56,7 @@ const CustomTooltip  = React.createClass({
        const { payload, label } = this.props;
        return (
          <div className="custom-tooltip">
+           <p className="name">{payload[0].payload.name}</p>
            <p className="date">記録日 : {payload[0].payload.datetime}</p>
            <p className="time">タイム : {payload[0].payload.record_time}</p>
            <p>距離 : {payload[0].payload.distance}</p>
@@ -77,9 +78,17 @@ function get_obj_by_key_value(dataAry, key, value) {
             return result;
         }
 
-const ChartTable = ({ Records, Name ,Distance, RaceChecked, HardChecked, InflatableChecked}) => {
+const ChartTable = ({ Records, Name ,Names ,Distance, RaceChecked, HardChecked, InflatableChecked}) => {
   //sort data
-  var list1 = get_obj_by_key_value({Records}.Records, 'name', {Name}.Name);  
+  var list1 = []
+  var list2 = []
+  var list3 = []
+  for (var i = 0; i < {Names}.Names.length; i++) {
+    var list = get_obj_by_key_value({Records}.Records, 'name', {Names}.Names[i]); 
+    for (var j = 0; j < list.length; j++) {
+      list1.push(list[j]) 
+    }
+  }
   var list2 = get_obj_by_key_value(list1, 'distance', Number({Distance}.Distance));  
   if({RaceChecked}.RaceChecked && {HardChecked}.HardChecked && {InflatableChecked}.InflatableChecked){
     var array1 = get_obj_by_key_value(list2, 'board', "0~10");
@@ -116,16 +125,26 @@ const ChartTable = ({ Records, Name ,Distance, RaceChecked, HardChecked, Inflata
     var list3 = []
     console.dir("Please check anything")
   }
+  for (var j = 0; j < {Names}.Names.length; j++) {
+    for (var i = 0; i < list3.length; i++) {
+      if(list3[i]["name"] == {Names}.Names[j]){
+        list3[i][{Names}.Names[j]] =  list3[i]["record_second_time"];
+      }
+    }
+  }
+
   return (
   <div>
     <LineChart width={600} height={300} data={list3}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+            margin={{top: 5, right: 30, left: 20, bottom: 5}} Names={{Names}.Names}>
        <XAxis dataKey="datetime" / >
        <YAxis dataKey="record_second_time" domain={['dataMin', 'dataMax']} tick={<CustomizedAxisTick/>} />
        <CartesianGrid strokeDasharray="3 3"/>
        <Tooltip content={<CustomTooltip/>}/>
        <Legend payload={[{ value: 'record_time', type: 'line', id: 'ID01' }]} />
-       <Line type="monotone" dataKey="record_second_time" stroke="#8884d8" activeDot={{r: 8}}/>
+       {Names.map((entry) => (
+         <Line connectNulls={true} type="monotone" dataKey={entry} stroke="#8884d8" activeDot={{r: 8}}/>
+       ))}
     </LineChart>
     <Table>
       <TableHeader>

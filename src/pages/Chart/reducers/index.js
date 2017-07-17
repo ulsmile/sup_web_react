@@ -28,6 +28,9 @@ function chartReducers(state = {
         return Object.assign({}, state, {name: addItem(state.name, action.searchText)});
     case 'CHANGE_DELETE_NAME':
         return Object.assign({}, state, {name: removeItem(state.name, action.Text)});
+    case 'RECEIVE_POSTS':
+        return Object.assign({}, state, {name: addItem(state.name, action.name)});
+/*    case 'CHANGE_DELETE_NAME':
 /*    case 'CHANGE_DELETE_NAME':
       nameList = state.name;
       const chipToDelete = nameList.map((chip) => chip.key).indexOf(key);

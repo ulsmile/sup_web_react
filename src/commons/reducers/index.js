@@ -4,7 +4,7 @@ function commonsReducers(state = {
     genderSelect: "male",
     hpPermissionCheck: false,
     rankingPermissionCheck: false,
-    records: [{record_id:"",record_time:"",board:"",place:"",distance:3,datetime:"",wind_speed:0,weather:"",temparature:"",record_second_time:0, name:""}]
+    records: [{record_id:"",record_time:"2016-10-01 01:34:17",board:"",place:"",distance:3,datetime:"",wind_speed:0,weather:"",temparature:"",record_second_time:0, name:""}]
 }, action) {
     switch(action.type) {
     case 'REQUEST_POSTS':

@@ -6,7 +6,7 @@ import NameFilter from '../components/NameFilter'
 const mapStateToProps = (state) => {
   return {
     Records: state.commonsReducers.records,
-    Name: state.chartReducers.name,
+    Names: state.chartReducers.name,
   }
 }
 const mapDispatchToProps = (dispatch) => {

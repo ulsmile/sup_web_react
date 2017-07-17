@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
     InflatableChecked: state.chartReducers.inflatableChecked,
     RaceChecked: state.chartReducers.raceChecked,
     Term: state.chartReducers.termSelect,
+    Names: state.chartReducers.name,
   }
 }
 

@@ -3,7 +3,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
 
 var value = ""
-const NameFilter = ({Name, Records, onChange, handleRequestDelete}) => {
+const NameFilter = ({Names, Records, onChange, handleRequestDelete}) => {
      var nameListAll = []
      for(var i=0 ; i<{Records}.Records.length ; i++){
        nameListAll.push({Records}.Records[i].name)
@@ -26,26 +26,26 @@ const NameFilter = ({Name, Records, onChange, handleRequestDelete}) => {
      };
      var key = ""
      var list=[]
-     console.dir({Name}.Name.length)
-     for(var i=0; i < {Name}.Name.length; i++){
-       key = Object.keys({Name}.Name[i])
-       //value = Object.values({Name}.Name[i])
-       value = {Name}.Name[i]
+     console.dir({Names}.Names.length)
+     for(var i=0; i < {Names}.Names.length; i++){
+       key = Object.keys({Names}.Names[i])
+       //value = Object.values({Names}.Names[i])
+       value = {Names}.Names[i]
        //console.dir(value)
        list.push(
        //<Chip key={key} onRequestDelete={() => handleRequestDelete(value)} style={styles.chip}>
        <Chip style={styles.chip} >
-          {{Name}.Name[i]}
+          {{Names}.Names[i]}
        </Chip>
        );
        }
-//     console.log(Object.keys({Name}.Name))
-//     console.log(Object.values({Name}.Name))
+//     console.log(Object.keys({Names}.Names))
+//     console.log(Object.values({Names}.Names))
      return(
        <div>
          <AutoComplete
            floatingLabelText="serch name"
-           filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
+           filter={AutoComplete.caseInsensitiveFilter}
            dataSource={nameList}
            onNewRequest={onChange}
          />
@@ -58,7 +58,7 @@ const NameFilter = ({Name, Records, onChange, handleRequestDelete}) => {
 }
 
 NameFilter.propTypes = {
-  Name: PropTypes.array,
+  Names: PropTypes.array,
   Records: PropTypes.array,
   onChange: PropTypes.func,
   handleRequestDelete: PropTypes.func,
