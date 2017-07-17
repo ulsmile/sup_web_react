@@ -5,6 +5,7 @@ import RankingGenderCheck from './containers/RankingGenderCheck';
 import RankingBoardTypesCheck from './containers/RankingBoardTypesCheck';
 import RankingDistanceSelect from './containers/RankingDistanceSelect';
 import RankingTermSelect from './containers/RankingTermSelect';
+import RankingTableContainer from './containers/RankingTableContainer';
 
 const Ranking = () => (
   <MuiThemeProvider>
@@ -17,6 +18,7 @@ const Ranking = () => (
       <RankingBoardTypesCheck />
       <RankingDistanceSelect />
       <RankingTermSelect />
+      <RankingTableContainer />
     </div>
   </MuiThemeProvider>
 );
