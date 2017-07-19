@@ -5,13 +5,14 @@ import RankingTable from '../components/RankingTable'
 const mapStateToProps = (state) => {
   return {
     Records: state.commonsReducers.records,
-    Name: state.commonsReducers.name,
-    Distance: state.chartReducers.distanceSelect,
-    HardChecked: state.chartReducers.hardChecked,
-    InflatableChecked: state.chartReducers.inflatableChecked,
-    RaceChecked: state.chartReducers.raceChecked,
-    Term: state.chartReducers.termSelect,
-    Names: state.chartReducers.name,
+  //  Name: state.commonsReducers.name,
+    Distance: state.rankingReducers.distanceSelect,
+    HardChecked: state.rankingReducers.hardChecked,
+    InflatableChecked: state.rankingReducers.inflatableChecked,
+    RaceChecked: state.rankingReducers.raceChecked,
+    FemaleChecked: state.rankingReducers.femaleChecked,
+    MaleChecked: state.rankingReducers.maleChecked,
+    Term: state.rankingReducers.termSelect,
   }
 }
 

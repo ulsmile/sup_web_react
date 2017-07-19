@@ -23,6 +23,7 @@ export const receivePosts = (subreddit, json) => {
   const Records = []
   var Time = 0
   var Name = ""
+  var Gender = ""
   console.dir(json.length)
   for(var i=0 ; i<json.length ; i++){
      Time =  json[i]["records"][0]["record_time"]
@@ -32,7 +33,9 @@ export const receivePosts = (subreddit, json) => {
      Records[i] = json[i]["records"][0]
      Records[i]["record_second_time"] = Time
      Name =  json[i]["name"]
+     Gender =  json[i]["gender"]
      Records[i]["name"] = Name
+     Records[i]["gender"] = Gender
   }
   console.dir(Records)   
   return {
@@ -40,6 +43,7 @@ export const receivePosts = (subreddit, json) => {
     subreddit,
     //posts: json.data.map(child => child.data),
     name: json[0]["name"],
+    gender: json[0]["gender"],
     rankingPermissionCheck: json[0]["ranking_permission"],
     hpPermissionCheck: json[0]["hp_permission"],
     //genderSelect: json[0]["gender"],

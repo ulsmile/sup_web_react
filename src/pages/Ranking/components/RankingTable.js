@@ -16,7 +16,7 @@ function get_obj_by_key_value(dataAry, key, value) {
             return result;
         }
 
-const RankingTable = ({ Records, Name ,Names ,Distance, RaceChecked, HardChecked, InflatableChecked}) => {
+const RankingTable = ({ Records, Distance, RaceChecked, HardChecked, InflatableChecked, FemaleChecked, MaleChecked, Term}) => {
   //sort data
   var list1 = []
   var list2 = []
@@ -27,7 +27,22 @@ const RankingTable = ({ Records, Name ,Names ,Distance, RaceChecked, HardChecked
       list1.push(list[j]) 
     }
   }*/
-  var list2 = get_obj_by_key_value({Records}.Records, 'distance', Number({Distance}.Distance));  
+  if({MaleChecked}.MaleChecked && {FemaleChecked}.FemaleChecked){
+    var array1 = get_obj_by_key_value({Records}.Records, 'gender', "男性");
+    var array2 = get_obj_by_key_value({Records}.Records, 'gender', "女性");
+    var list1 = array1.concat(array2);
+  }
+  else if({MaleChecked}.MaleChecked && !{FemaleChecked}.FemaleChecked){
+    var list1 = get_obj_by_key_value({Records}.Records, 'gender', "男性");
+  }
+  else if(!{MaleChecked}.MaleChecked && {FemaleChecked}.FemaleChecked){
+    var list1 = get_obj_by_key_value({Records}.Records, 'gender', "女性");
+  }
+  else{
+    var list1 = []
+    console.dir("Please check anything")
+  }
+  var list2 = get_obj_by_key_value(list1, 'distance', Number({Distance}.Distance));  
   if({RaceChecked}.RaceChecked && {HardChecked}.HardChecked && {InflatableChecked}.InflatableChecked){
     var array1 = get_obj_by_key_value(list2, 'board', "0~10");
     var array2 = get_obj_by_key_value(list2, 'board', "11~20");
@@ -63,6 +78,7 @@ const RankingTable = ({ Records, Name ,Names ,Distance, RaceChecked, HardChecked
     var list3 = []
     console.dir("Please check anything")
   }
+
 /*  for (var j = 0; j < {Names}.Names.length; j++) {
     for (var i = 0; i < list3.length; i++) {
       if(list3[i]["name"] == {Names}.Names[j]){
@@ -150,11 +166,12 @@ const RankingTable = ({ Records, Name ,Names ,Distance, RaceChecked, HardChecked
 }
 RankingTable.propTypes = {
   Records: PropTypes.array,
-  Name: PropTypes.string,
   Distance: PropTypes.string,
   HardChecked: PropTypes.bool,
   InflatableChecked: PropTypes.bool,
   RaceChecked: PropTypes.bool,
+  FemaleChecked: PropTypes.bool,
+  MaleChecked: PropTypes.bool,
   Term: PropTypes.string,
 }
 export default RankingTable;

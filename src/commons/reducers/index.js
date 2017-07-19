@@ -2,9 +2,10 @@ function commonsReducers(state = {
     isFetching: false,
     name: "富澤慧哉",
     genderSelect: "male",
+    gender: "",
     hpPermissionCheck: false,
     rankingPermissionCheck: false,
-    records: [{record_id:"",record_time:"2016-10-01 01:34:17",board:"",place:"",distance:3,datetime:"",wind_speed:0,weather:"",temparature:"",record_second_time:0, name:""}]
+    records: [{record_id:"",record_time:"2016-10-01 01:34:17",board:"",place:"",distance:3,datetime:"",wind_speed:0,weather:"",temparature:"",record_second_time:0, name:"", gender:""}]
 }, action) {
     switch(action.type) {
     case 'REQUEST_POSTS':
@@ -15,10 +16,11 @@ function commonsReducers(state = {
       return Object.assign({}, state, {
         isFetching: false,
         name: action.name,
-        genderSelect: action.select,
+        //genderSelect: action.select,
         hpPermissionCheck: action.hpPermissionCheck,
         rankingPermissionCheck: action.rankingPermissionCheck,
         records: action.records,
+        gender: action.gender,
       });
     case 'CHANGE_NAME':
         return Object.assign({}, state, {name: action.name});
