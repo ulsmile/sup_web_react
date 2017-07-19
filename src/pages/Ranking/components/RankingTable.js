@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import {
   Table,
   TableBody,
@@ -7,6 +10,22 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+  },
+  titleStyle: {
+    color: 'rgb(0, 188, 212)',
+  },
+};
 
 //table function
 function get_obj_by_key_value(dataAry, key, value) {
@@ -133,8 +152,20 @@ const RankingTable = ({ Records, Distance, RaceChecked, HardChecked, InflatableC
      rankingListTable.push(rankingAllList[i][0])
   }
   console.dir(rankingListTable)
+  var top3 = rankingListTable.slice(0,3)
   return (
   <div>
+     <GridList style={styles.gridList} cols={2.2}>
+      {top3.map((tile, index) => (
+        <GridTile
+          key={tile.name}
+          title={index+1+'位'+tile.name}
+          titleStyle={styles.titleStyle}
+          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+        >
+        </GridTile>
+      ))}
+    </GridList>
     <Table>
       <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
         <TableRow>
