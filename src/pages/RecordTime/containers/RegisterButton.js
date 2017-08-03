@@ -9,11 +9,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const url = 'http://localhost:3001/register'
   return {
-
     onClick(){
-           dispatch(uploadData('update', url));
+           dispatch(uploadData());
     }
  }
 }

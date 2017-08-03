@@ -103,9 +103,8 @@ export const requestUpdate = (subreddit) => {
   }
 }*/
 
-export function uploadData(subreddit, url) {
-  return function (dispatch) {
-    dispatch(requestUpdate(subreddit))
+export function uploadData() {
+    var url = 'http://localhost:3001/players'
     var state_string = getState()
     var data = (new Function("return " + state_string))()["recordTimeReducers"];
     console.dir(data)
@@ -114,10 +113,9 @@ export function uploadData(subreddit, url) {
       formData.append('data', data);
     console.dir(formData)
     
-    return fetch(url, {method: 'POST', body: formData})
+    return fetch(url, {method: 'POST', body: data})
 /*      .then(response => response.json())
       .then(json =>
         dispatch(updatedPosts(subreddit))
       )*/
-  }
 }
