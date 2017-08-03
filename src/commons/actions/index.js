@@ -58,10 +58,7 @@ export const receiveWeatherPosts = (subreddit, json) => {
     type: 'RECEIVE_WEATHER_POSTS',
     subreddit,
     windSpeed: json["query"]["results"]["channel"]["wind"]["speed"],
-    windChill: json["query"]["results"]["channel"]["wind"]["chill"],
-    windDirection: json["query"]["results"]["channel"]["wind"]["direction"],
-    humidity: json["query"]["results"]["channel"]["atmosphere"]["humidity"],
-    sunrise: json["query"]["results"]["channel"]["astronomy"]["sunrise"],
+    windChill: json["query"]["results"]["channel"]["wind"]["chill"], windDirection: json["query"]["results"]["channel"]["wind"]["direction"], humidity: json["query"]["results"]["channel"]["atmosphere"]["humidity"], sunrise: json["query"]["results"]["channel"]["astronomy"]["sunrise"],
     sunset: json["query"]["results"]["channel"]["astronomy"]["sunset"],
     date: json["query"]["results"]["channel"]["item"]["condition"]["date"],
     temp: json["query"]["results"]["channel"]["item"]["condition"]["temp"],
@@ -92,11 +89,35 @@ export function fetchWeatherPosts(subreddit, url) {
       )
   }
 }
-      /*.then(function(json){
-        if(url=url1){
-        dispatch(receivePosts(subreddit, json))
-        }
-        else if(url=weatherUrl){
-        dispatch(receiveWeatherPosts(subreddit, json))
-        }
-      }*/
+
+//upload
+export const requestUpdate = (subreddit) => {
+  return {
+    type: 'REQUEST_UPDATE',
+    subreddit
+    }
+}
+/*export function updateData(subreddit, url, data) {
+  return function (dispatch) {
+    dispatch(uploadData(subreddit, url, data))
+  }
+}*/
+
+export function uploadData(subreddit, url) {
+  return function (dispatch) {
+    dispatch(requestUpdate(subreddit))
+    var state_string = getState()
+    var data = (new Function("return " + state_string))()["recordTimeReducers"];
+    console.dir(data)
+    console.dir(typeof(data))
+    const formData = new FormData();
+      formData.append('data', data);
+    console.dir(formData)
+    
+    return fetch(url, {method: 'POST', body: formData})
+/*      .then(response => response.json())
+      .then(json =>
+        dispatch(updatedPosts(subreddit))
+      )*/
+  }
+}

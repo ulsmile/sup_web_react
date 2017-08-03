@@ -1,19 +1,19 @@
 import { connect } from 'react-redux'
 import React, { PropTypes } from 'react';
-import { pushRegisterButton } from '../actions'
+import { updateData, uploadData } from '../../../commons/actions'
 import Button from '../components/Button'
 
 const mapStateToProps = (state) => {
   return {
-    Selected: state.recordTimeReducers.registerValue
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
+  const url = 'http://localhost:3001/register'
   return {
 
     onClick(){
-           dispatch(pushRegisterButton());
+           dispatch(uploadData('update', url));
     }
  }
 }
