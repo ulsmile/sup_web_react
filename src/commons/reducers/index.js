@@ -12,6 +12,10 @@ function commonsReducers(state = {
       return Object.assign({}, state, {
         isFetching: true,
       });
+    case 'RECEIVE_UPDATE':
+      return Object.assign({}, state, {
+        isFetching: false,
+      });
     case 'RECEIVE_POSTS':
       return Object.assign({}, state, {
         isFetching: false,
